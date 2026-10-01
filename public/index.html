@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Velora — premium restaurant landing page with online reservation experience.">
+  <title>Velora — Fine Dining, Reimagined</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0b0a;--card:#151512;--paper:#f4efe6;--ink:#171713;--text:#f5f0e8;--muted:#aaa59b;--gold:#c7a66a;--gold2:#e6ca92;--line:rgba(255,255,255,.11);--radius:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.6;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 15% 10%,rgba(199,166,106,.12),transparent 28%),linear-gradient(180deg,#0b0b0a,#10100e)}
+    a{text-decoration:none;color:inherit}img{width:100%;height:100%;object-fit:cover;display:block}button,input,select,textarea{font:inherit}.container{width:min(1180px,calc(100% - 40px));margin:auto}
+    h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.04;margin:0}.eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);font-weight:700}.section{padding:105px 0}
+    .navwrap{position:fixed;top:18px;left:0;right:0;z-index:50}.nav{width:min(1180px,calc(100% - 28px));margin:auto;display:flex;align-items:center;justify-content:space-between;padding:13px 16px 13px 20px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(12,12,10,.76);backdrop-filter:blur(18px)}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.08em}.brandmark{width:34px;height:34px;border:1px solid rgba(199,166,106,.6);border-radius:50%;display:grid;place-items:center;color:var(--gold)}.links{display:flex;gap:28px;align-items:center;color:#ddd8cf;font-size:.94rem}.links a:hover{color:var(--gold2)}.menubtn{display:none;background:none;border:0;color:#fff;font-size:1.5rem}
+    .hero{min-height:100vh;position:relative;display:grid;align-items:end;padding:130px 0 48px}.heroimg{position:absolute;inset:0;z-index:-2}.heroimg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,7,6,.96),rgba(7,7,6,.72) 42%,rgba(7,7,6,.25) 72%),linear-gradient(0deg,#0b0b0a,transparent 35%)}.heroimg img{filter:saturate(.92) contrast(1.05)}
+    .herogrid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:end}.hero h1{font-size:clamp(4rem,10vw,8.4rem);letter-spacing:-.045em;max-width:900px}.hero h1 span{color:var(--gold)}.herosub{font-size:1.08rem;color:#d4cfc5;max-width:620px;margin:24px 0 30px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-weight:700;transition:.25s;border:1px solid transparent}.primary{background:var(--gold);color:#111}.primary:hover{background:var(--gold2);transform:translateY(-2px)}.ghost{border-color:var(--line);background:rgba(255,255,255,.03)}.ghost:hover{border-color:rgba(199,166,106,.7)}
+    .herocard{justify-self:end;width:min(380px,100%);padding:24px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(18,18,15,.7);backdrop-filter:blur(16px)}.herocard .row{display:flex;justify-content:space-between;gap:15px;padding:13px 0;border-bottom:1px solid var(--line)}.herocard .row:last-child{border:0}.herocard span{color:var(--muted);text-align:right}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-top:52px}.stat{padding:24px;background:rgba(11,11,10,.88)}.stat strong{display:block;font-family:"Playfair Display",serif;color:var(--gold2);font-size:2rem}.stat span{color:var(--muted);font-size:.9rem}
+    .paper{background:var(--paper);color:var(--ink)}.storygrid{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px}.imagestack{display:grid;grid-template-columns:1fr .72fr;gap:18px;min-height:650px}.imagestack div{overflow:hidden;border-radius:var(--radius)}.imagestack .small{height:72%;align-self:end}.storycopy{padding:24px 0 24px 32px;display:flex;flex-direction:column;justify-content:center}.storycopy .eyebrow{color:#8b6b34}.storycopy h2,.featurecopy h2{font-size:clamp(3rem,6vw,5.2rem);margin:12px 0 24px}.storycopy p{color:#666055;max-width:590px}
+    .sectionhead{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:44px}.sectionhead h2{font-size:clamp(2.7rem,6vw,5rem);max-width:760px}.sectionhead p{max-width:470px;color:var(--muted)}
+    .menugrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.dish{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card);transition:.3s}.dish:hover{transform:translateY(-6px);border-color:rgba(199,166,106,.42)}.dishmedia{height:280px}.dishbody{padding:22px}.dishtop{display:flex;justify-content:space-between;gap:15px}.dish h3{font-size:1.55rem}.price{color:var(--gold2);font-weight:700;white-space:nowrap}.dish p{color:var(--muted);font-size:.94rem}
+    .feature{display:grid;grid-template-columns:1fr 1fr;min-height:620px;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#11110f}.featurecopy{padding:64px;display:flex;flex-direction:column;justify-content:center}.featurecopy p{color:var(--muted)}.points{display:grid;gap:14px;margin:28px 0}.point{display:flex;gap:12px}.point b{color:var(--gold)}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.quote{padding:28px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.025)}.stars{color:var(--gold);letter-spacing:.12em}.quote p{font-family:"Playfair Display",serif;font-size:1.32rem;line-height:1.45}.quote small{color:var(--muted)}
+    .reservation{background:linear-gradient(135deg,#c5a367,#e1c488);color:#17140f;border-radius:30px;padding:56px;display:grid;grid-template-columns:.8fr 1.2fr;gap:46px}.reservation h2{font-size:clamp(3rem,5.5vw,5rem);margin:10px 0 18px}.reservation p{color:#4f4637}form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field{display:flex;flex-direction:column;gap:8px}.full{grid-column:1/-1}label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}input,select,textarea{width:100%;border:1px solid rgba(23,20,15,.18);background:rgba(255,255,255,.65);color:#17140f;padding:14px 15px;border-radius:14px;outline:none}textarea{min-height:110px;resize:vertical}.submit{grid-column:1/-1;background:#11100e;color:#fff;border:0;border-radius:14px;padding:15px 18px;font-weight:800;cursor:pointer}
+    footer{padding:36px 0 46px;color:#8e897f}.footergrid{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;gap:25px;align-items:center}.socials{display:flex;gap:16px}.toast{position:fixed;right:22px;bottom:22px;z-index:80;max-width:360px;padding:16px 18px;border-radius:14px;background:#f3eee5;color:#17140f;box-shadow:0 30px 70px rgba(0,0,0,.35);transform:translateY(150%);transition:.35s}.toast.show{transform:translateY(0)}
+    .reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){.links{display:none;position:absolute;top:72px;left:14px;right:14px;flex-direction:column;padding:22px;border:1px solid var(--line);border-radius:18px;background:#11110f}.links.open{display:flex}.menubtn{display:block}.herogrid,.storygrid,.feature,.reservation{grid-template-columns:1fr}.herocard{justify-self:start}.stats{grid-template-columns:repeat(2,1fr)}.menugrid,.reviews{grid-template-columns:1fr}.storycopy{padding-left:0}.featurecopy{padding:38px}.sectionhead{display:block}.sectionhead p{margin-top:18px}}
+    @media(max-width:600px){.container{width:min(100% - 24px,1180px)}.section{padding:78px 0}.hero{padding-top:118px}.hero h1{font-size:clamp(3.5rem,18vw,5.7rem)}.herocard{display:none}.imagestack{grid-template-columns:1fr;min-height:auto}.imagestack .big{height:430px}.imagestack .small{height:320px}form{grid-template-columns:1fr}.full,.submit{grid-column:auto}.reservation{padding:26px}.footergrid{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="navwrap">
+    <nav class="nav">
+      <a class="brand" href="#home"><span class="brandmark">V</span><span>VELORA</span></a>
+      <div class="links" id="navLinks">
+        <a href="#story">Story</a><a href="#menu">Menu</a><a href="#experience">Experience</a><a href="#reviews">Reviews</a><a href="#reserve">Reserve</a>
+      </div>
+      <button class="menubtn" id="menuBtn" aria-label="Open menu">☰</button>
+    </nav>
+  </div>
+
+  <header class="hero" id="home">
+    <div class="heroimg">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2200&q=90" alt="Luxury restaurant interior">
+    </div>
+    <div class="container">
+      <div class="herogrid">
+        <div class="reveal">
+          <div class="eyebrow">Jeddah · Contemporary Dining</div>
+          <h1>Fine dining,<br><span>reimagined.</span></h1>
+          <p class="herosub">A cinematic dining experience where modern cuisine, warm hospitality and refined interiors come together around one memorable table.</p>
+          <div class="actions"><a class="btn primary" href="#reserve">Reserve a table ↗</a><a class="btn ghost" href="#menu">Explore the menu</a></div>
+        </div>
+        <aside class="herocard reveal">
+          <div class="eyebrow">Tonight at Velora</div>
+          <div class="row"><strong>Dinner</strong><span>5:30 PM — 12:00 AM</span></div>
+          <div class="row"><strong>Chef's Tasting</strong><span>7-course seasonal menu</span></div>
+          <div class="row"><strong>Dress Code</strong><span>Smart elegant</span></div>
+          <div class="row"><strong>Reservations</strong><span>Recommended</span></div>
+        </aside>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><strong>4.9</strong><span>Guest rating</span></div>
+        <div class="stat"><strong>7</strong><span>Signature courses</span></div>
+        <div class="stat"><strong>28</strong><span>Curated seats nightly</span></div>
+        <div class="stat"><strong>2026</strong><span>New seasonal chapter</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section paper" id="story">
+    <div class="container storygrid">
+      <div class="imagestack reveal">
+        <div class="big"><img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1400&q=88" alt="Fine dining table"></div>
+        <div class="small"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=88" alt="Fine dining plate"></div>
+      </div>
+      <div class="storycopy reveal">
+        <div class="eyebrow">Our philosophy</div>
+        <h2>Built around the feeling of a perfect evening.</h2>
+        <p>Velora is a modern restaurant concept shaped around detail: seasonal ingredients, restrained presentation, thoughtful lighting and service that feels intuitive rather than formal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="container">
+      <div class="sectionhead reveal">
+        <div><div class="eyebrow">Signature plates</div><h2>A menu with a point of view.</h2></div>
+        <p>Focused dishes, considered presentation and a visual language built to make the landing page feel like a real premium restaurant brand.</p>
+      </div>
+      <div class="menugrid">
+        <article class="dish reveal"><div class="dishmedia"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=88" alt="Starter"></div><div class="dishbody"><div class="dishtop"><h3>Charred Garden</h3><span class="price">SAR 78</span></div><p>Seasonal vegetables, smoked yogurt, herb oil and toasted seeds.</p></div></article>
+        <article class="dish reveal"><div class="dishmedia"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=88" alt="Main course"></div><div class="dishbody"><div class="dishtop"><h3>Slow Ember Beef</h3><span class="price">SAR 168</span></div><p>48-hour beef, glazed onion, pomme purée and natural jus.</p></div></article>
+        <article class="dish reveal"><div class="dishmedia"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1200&q=88" alt="Dessert"></div><div class="dishbody"><div class="dishtop"><h3>Midnight Praline</h3><span class="price">SAR 64</span></div><p>Dark chocolate, hazelnut praline, sea salt and espresso cream.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="feature reveal">
+        <div class="featurecopy">
+          <div class="eyebrow">Private dining</div>
+          <h2>Designed for moments worth remembering.</h2>
+          <p>From intimate celebrations to private business dinners, Velora can be adapted around the mood, menu and pace you want.</p>
+          <div class="points"><div class="point"><b>✦</b><span>Private room for up to 14 guests</span></div><div class="point"><b>✦</b><span>Custom tasting menus and pairings</span></div><div class="point"><b>✦</b><span>Dedicated host and tailored table styling</span></div></div>
+          <a class="btn primary" href="#reserve" style="align-self:flex-start">Plan a private dinner</a>
+        </div>
+        <div><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1500&q=88" alt="Private dining room"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="sectionhead reveal"><div><div class="eyebrow">Guest notes</div><h2>Quiet confidence. Strong impressions.</h2></div><p>Social proof keeps a one-page experience focused while answering the visitor's trust questions before the reservation call to action.</p></div>
+      <div class="reviews">
+        <div class="quote reveal"><div class="stars">★★★★★</div><p>“Beautifully paced, calm, and genuinely memorable.”</p><small>— Guest review</small></div>
+        <div class="quote reveal"><div class="stars">★★★★★</div><p>“A premium experience without the stiffness. Every detail felt intentional.”</p><small>— Private dining guest</small></div>
+        <div class="quote reveal"><div class="stars">★★★★★</div><p>“One of those places you recommend before you even leave the table.”</p><small>— Returning guest</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reserve">
+    <div class="container">
+      <div class="reservation reveal">
+        <div><div class="eyebrow" style="color:#54401f">Reservations</div><h2>Your table is waiting.</h2><p>Send a reservation request. The Node.js backend stores it and makes it available in the admin dashboard.</p></div>
+        <form id="reservationForm">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" placeholder="Your name" required></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" placeholder="+966 5X XXX XXXX" required></div>
+          <div class="field"><label for="date">Date</label><input id="date" name="date" type="date" required></div>
+          <div class="field"><label for="guests">Guests</label><select id="guests" name="guests" required><option value="">Select</option><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option><option>7+ guests</option></select></div>
+          <div class="field"><label for="time">Time</label><select id="time" name="time" required><option value="">Select</option><option>6:00 PM</option><option>7:30 PM</option><option>9:00 PM</option><option>10:30 PM</option></select></div>
+          <div class="field"><label for="occasion">Occasion</label><select id="occasion" name="occasion"><option>Casual dinner</option><option>Birthday</option><option>Anniversary</option><option>Business dinner</option><option>Private event</option></select></div>
+          <div class="field full"><label for="notes">Notes</label><textarea id="notes" name="notes" placeholder="Allergies, seating preference, special request…"></textarea></div>
+          <button class="submit" type="submit">Request reservation →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="container footergrid"><div class="brand"><span class="brandmark">V</span><span>VELORA</span></div><div class="socials"><a href="#">Instagram</a><a href="#">Maps</a><a href="#">WhatsApp</a></div><div>© <span id="year"></span> Velora.</div></div></footer>
+
+  <div class="toast" id="toast"><strong>Reservation request received.</strong><br><span style="font-size:.9rem;color:#665f54"></span></div>
+
+  <script>
+    const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const dateInput=document.getElementById('date');dateInput.min=new Date().toISOString().split('T')[0];
+    const form=document.getElementById('reservationForm'),toast=document.getElementById('toast'),toastTitle=toast.querySelector('strong'),toastText=toast.querySelector('span');
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      const btn=form.querySelector('.submit'),old=btn.textContent;btn.disabled=true;btn.textContent='Sending...';
+      try{
+        const response=await fetch('/api/reservations',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form).entries()))});
+        const result=await response.json();
+        if(!response.ok)throw new Error(result.message||'Reservation request failed.');
+        toastTitle.textContent='Reservation request received.';
+        toastText.textContent='Reference #'+result.id+' — your request was saved successfully.';
+        form.reset();dateInput.min=new Date().toISOString().split('T')[0];
+      }catch(err){
+        toastTitle.textContent='Could not send reservation.';toastText.textContent=err.message;
+      }finally{
+        toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),4200);btn.disabled=false;btn.textContent=old;
+      }
+    });
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
