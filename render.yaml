@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: velora-restaurant-landing-page
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
