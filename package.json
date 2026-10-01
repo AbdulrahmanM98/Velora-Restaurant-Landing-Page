@@ -1,0 +1,15 @@
+{
+  "name": "velora-restaurant-landing-page",
+  "version": "1.0.0",
+  "description": "Premium restaurant landing page with a Node.js reservation API and admin dashboard.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
